@@ -1,0 +1,18 @@
+pandas
+numpy
+scikit-learn
+scipy
+opencv-python
+pillow
+pytesseract
+pdfplumber
+python-dateutil
+flask
+matplotlib
+seaborn
+
+# System dependency (not pip-installable): Tesseract OCR engine must be
+# installed separately for image/scanned-PDF OCR to work, e.g.:
+#   Ubuntu/Debian: sudo apt-get install tesseract-ocr
+#   macOS:         brew install tesseract
+#   Windows:       https://github.com/UB-Mannheim/tesseract/wiki

@@ -1,0 +1,16 @@
+Juniper Marketing Group
+123 Commerce Way, Springfield
+-----------------------------------------
+INVOICE
+Invoice Number: INV-10149
+Invoice Date: 2026-06-04
+Due Date: 2026-06-19
+PO Number: PO-30753
+Payment Terms: NET15
+-----------------------------------------
+Description                Qty     Amount
+Professional Services        1     5,470.69
+-----------------------------------------
+Subtotal: $5,470.69
+Tax (8%): $437.66
+Total Amount Due: $5,908.35

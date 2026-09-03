@@ -1,0 +1,17 @@
+Acme Suppiles Co.
+123 Commerce Way, Springfield
+-----------------------------------------
+INVOICE
+Invoice Number: INV-10150
+Invoice Date: 2026-11-15
+Due Date: 2026-10-20
+PO Number:
+Payment Terms: NET30
+-----------------------------------------
+Description                Qty     Amount
+Consulting Services           1     28,500.00
+-----------------------------------------
+Subtotal: $28,500.00
+Tax (8%): $2,280.00
+Total Amount Due: $35,000.00
+Status: PAID IN FULL. Remaining Balance Due: $35,000.00

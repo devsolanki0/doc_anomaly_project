@@ -1,0 +1,16 @@
+Falcon IT Services
+123 Commerce Way, Springfield
+-----------------------------------------
+INVOICE
+Invoice Number: INV-20004
+Invoice Date: 2026-08-19
+Due Date: 2026-09-18
+PO Number: PO-35383
+Payment Terms: NET30
+-----------------------------------------
+Description                Qty     Amount
+Professional Services        1     2,693.80
+-----------------------------------------
+Subtotal: $2,693.80
+Tax (8%): $215.50
+Total Amount Due: $2,909.30

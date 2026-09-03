@@ -1,0 +1,19 @@
+filename,ground_truth_note
+doc_01_normal.txt,normal
+doc_02_normal.txt,normal
+doc_03_normal.txt,normal
+doc_04_normal.txt,normal
+doc_05_normal.txt,normal
+doc_06_normal.txt,normal
+doc_07_math_mismatch.txt,Arithmetic mismatch: printed total does not equal subtotal + tax
+doc_08_due_before_invoice.txt,Due date is earlier than the invoice date
+doc_09_future_dated.txt,Invoice is dated in the future relative to processing date
+doc_10_duplicate_invoice_number.txt,Invoice number already exists in historical records (possible duplicate/resubmission)
+doc_11_vendor_lookalike.txt,Vendor name closely resembles a known vendor but does not match exactly (possible impersonation)
+doc_12_amount_outlier.txt,Invoice amount is far outside this vendor's normal historical range
+doc_13_missing_fields.txt,Missing required fields: invoice number and PO number
+doc_14_conflicting_statement.txt,Conflicting statements: marked 'PAID IN FULL' but a nonzero balance is also listed
+doc_15_round_number.txt,Suspiciously round subtotal/total amounts (common in fabricated invoices)
+doc_16_original_for_duplicate.txt,normal
+doc_17_near_duplicate.txt,"Near-duplicate of another document in this batch (nearly identical content, different ID)"
+doc_18_unparsable_date.txt,"Date field is malformed / unparsable (likely OCR error), preventing date-logic checks"

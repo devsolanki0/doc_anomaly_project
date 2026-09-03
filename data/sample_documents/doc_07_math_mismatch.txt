@@ -1,0 +1,16 @@
+Harbor Freight Partners
+123 Commerce Way, Springfield
+-----------------------------------------
+INVOICE
+Invoice Number: INV-20100
+Invoice Date: 2026-08-09
+Due Date: 2026-10-08
+PO Number: PO-34708
+Payment Terms: NET60
+-----------------------------------------
+Description                Qty     Amount
+Professional Services        1     9,660.52
+-----------------------------------------
+Subtotal: $9,660.52
+Tax (8%): $772.84
+Total Amount Due: $10,683.36

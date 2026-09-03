@@ -1,0 +1,16 @@
+Crestline Manufacturing
+123 Commerce Way, Springfield
+-----------------------------------------
+INVOICE
+Invoice Number: INV-20000
+Invoice Date: 2026-08-04
+Due Date: 2026-09-18
+PO Number: PO-31644
+Payment Terms: NET45
+-----------------------------------------
+Description                Qty     Amount
+Professional Services        1     14,692.71
+-----------------------------------------
+Subtotal: $14,692.71
+Tax (8%): $1,175.42
+Total Amount Due: $15,868.13

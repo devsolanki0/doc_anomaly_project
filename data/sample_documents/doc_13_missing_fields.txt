@@ -1,0 +1,16 @@
+Juniper Marketing Group
+123 Commerce Way, Springfield
+-----------------------------------------
+INVOICE
+Invoice Number: 
+Invoice Date: 2026-08-27
+Due Date: 2026-09-11
+PO Number: 
+Payment Terms: NET15
+-----------------------------------------
+Description                Qty     Amount
+Professional Services        1     1,856.40
+-----------------------------------------
+Subtotal: $1,856.40
+Tax (8%): $148.51
+Total Amount Due: $2,004.91

@@ -1,0 +1,16 @@
+Acme Suppiles Co.
+123 Commerce Way, Springfield
+-----------------------------------------
+INVOICE
+Invoice Number: INV-20104
+Invoice Date: 2026-06-08
+Due Date: 2026-07-08
+PO Number: PO-32385
+Payment Terms: NET30
+-----------------------------------------
+Description                Qty     Amount
+Professional Services        1     2,843.48
+-----------------------------------------
+Subtotal: $2,843.48
+Tax (8%): $227.48
+Total Amount Due: $3,070.96

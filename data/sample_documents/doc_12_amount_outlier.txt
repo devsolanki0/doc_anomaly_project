@@ -1,0 +1,16 @@
+Delta Office Solutions
+123 Commerce Way, Springfield
+-----------------------------------------
+INVOICE
+Invoice Number: INV-20105
+Invoice Date: 2026-08-07
+Due Date: 2026-09-06
+PO Number: PO-36751
+Payment Terms: NET30
+-----------------------------------------
+Description                Qty     Amount
+Professional Services        1     2,600.00
+-----------------------------------------
+Subtotal: $2,600.00
+Tax (8%): $208.00
+Total Amount Due: $2,808.00

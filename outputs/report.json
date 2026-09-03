@@ -1,0 +1,494 @@
+[
+  {
+    "doc_id": "doc_07_math_mismatch.txt",
+    "risk_level": "Medium",
+    "ml_anomaly_score": 0.6335,
+    "ml_anomaly_percentile": 99.6,
+    "extracted_fields": {
+      "vendor_name": "Harbor Freight Partners",
+      "invoice_date": "2026-08-09",
+      "due_date": "2026-10-08",
+      "subtotal": 9660.52,
+      "tax": 772.84,
+      "total_amount": 10683.36,
+      "invoice_number": "INV-20100",
+      "po_number": "PO-34708",
+      "payment_terms": "NET60"
+    },
+    "reasons": [
+      {
+        "source": "rule",
+        "category": "arithmetic",
+        "severity": "high",
+        "message": "Printed total ($10,683.36) does not equal subtotal + tax ($9,660.52 + $772.84 = $10,433.36); difference of $250.00."
+      }
+    ]
+  },
+  {
+    "doc_id": "doc_08_due_before_invoice.txt",
+    "risk_level": "Medium",
+    "ml_anomaly_score": 0.563,
+    "ml_anomaly_percentile": 94.4,
+    "extracted_fields": {
+      "vendor_name": "Delta Office Solutions",
+      "invoice_date": "2026-06-12",
+      "due_date": "2026-06-02",
+      "subtotal": 812.63,
+      "tax": 65.01,
+      "total_amount": 877.64,
+      "invoice_number": "INV-20101",
+      "po_number": "PO-37110",
+      "payment_terms": "NET30"
+    },
+    "reasons": [
+      {
+        "source": "rule",
+        "category": "date_logic",
+        "severity": "high",
+        "message": "Due date (2026-06-02) is earlier than the invoice date (2026-06-12) \u2014 dates are logically inconsistent."
+      }
+    ]
+  },
+  {
+    "doc_id": "doc_09_future_dated.txt",
+    "risk_level": "Medium",
+    "ml_anomaly_score": 0.5431,
+    "ml_anomaly_percentile": 90.8,
+    "extracted_fields": {
+      "vendor_name": "Bluepeak Logistics",
+      "invoice_date": "2026-10-27",
+      "due_date": "2026-11-26",
+      "subtotal": 4081.66,
+      "tax": 326.53,
+      "total_amount": 4408.19,
+      "invoice_number": "INV-20102",
+      "po_number": "PO-32725",
+      "payment_terms": "NET15"
+    },
+    "reasons": [
+      {
+        "source": "rule",
+        "category": "date_logic",
+        "severity": "high",
+        "message": "Invoice is dated 2026-10-27, which is in the future relative to today (2026-08-29)."
+      },
+      {
+        "source": "ml_model",
+        "category": "pattern_deviation:digit_density",
+        "severity": "medium",
+        "message": "The proportion of numeric content in the document is atypical. (observed value: 0.13, contribution to anomaly score: 0.05)"
+      }
+    ]
+  },
+  {
+    "doc_id": "doc_11_vendor_lookalike.txt",
+    "risk_level": "Medium",
+    "ml_anomaly_score": 0.5335,
+    "ml_anomaly_percentile": 88.4,
+    "extracted_fields": {
+      "vendor_name": "Acme Suppiles Co.",
+      "invoice_date": "2026-06-08",
+      "due_date": "2026-07-08",
+      "subtotal": 2843.48,
+      "tax": 227.48,
+      "total_amount": 3070.96,
+      "invoice_number": "INV-20104",
+      "po_number": "PO-32385",
+      "payment_terms": "NET30"
+    },
+    "reasons": [
+      {
+        "source": "rule",
+        "category": "vendor_lookalike",
+        "severity": "high",
+        "message": "Vendor name 'Acme Suppiles Co.' is 94% similar to known vendor 'Acme Supplies Co.' but does not match exactly \u2014 possible vendor impersonation or a typo introduced during data entry/OCR."
+      }
+    ]
+  },
+  {
+    "doc_id": "doc_13_missing_fields.txt",
+    "risk_level": "Medium",
+    "ml_anomaly_score": 0.5511,
+    "ml_anomaly_percentile": 92.8,
+    "extracted_fields": {
+      "vendor_name": "Juniper Marketing Group",
+      "invoice_date": "2026-08-27",
+      "due_date": "2026-09-11",
+      "subtotal": 1856.4,
+      "tax": 148.51,
+      "total_amount": 2004.91,
+      "invoice_number": null,
+      "po_number": "Number",
+      "payment_terms": "NET15"
+    },
+    "reasons": [
+      {
+        "source": "rule",
+        "category": "missing_fields",
+        "severity": "medium",
+        "message": "Missing required field(s): invoice_number."
+      }
+    ]
+  },
+  {
+    "doc_id": "doc_14_conflicting_statement.txt",
+    "risk_level": "Medium",
+    "ml_anomaly_score": 0.613,
+    "ml_anomaly_percentile": 99.6,
+    "extracted_fields": {
+      "vendor_name": "Juniper Marketing Group",
+      "invoice_date": "2026-07-19",
+      "due_date": "2026-08-03",
+      "subtotal": 1593.93,
+      "tax": 127.51,
+      "total_amount": 1721.44,
+      "invoice_number": "INV-20107",
+      "po_number": "PO-33945",
+      "payment_terms": "NET15"
+    },
+    "reasons": [
+      {
+        "source": "rule",
+        "category": "conflicting_statement",
+        "severity": "high",
+        "message": "Document states the invoice is 'PAID IN FULL' but also lists a nonzero balance due ($1,721.44) \u2014 these statements directly contradict each other."
+      }
+    ]
+  },
+  {
+    "doc_id": "doc_15_round_number.txt",
+    "risk_level": "Medium",
+    "ml_anomaly_score": 0.6224,
+    "ml_anomaly_percentile": 99.6,
+    "extracted_fields": {
+      "vendor_name": "Harbor Freight Partners",
+      "invoice_date": "2026-08-14",
+      "due_date": "2026-10-13",
+      "subtotal": 5000.0,
+      "tax": 400.0,
+      "total_amount": 5400.0,
+      "invoice_number": "INV-20108",
+      "po_number": "PO-34161",
+      "payment_terms": "NET60"
+    },
+    "reasons": [
+      {
+        "source": "rule",
+        "category": "round_numbers",
+        "severity": "low",
+        "message": "Subtotal ($5,000.00) and total are suspiciously round numbers; genuine itemized invoices rarely land on exact round figures."
+      },
+      {
+        "source": "ml_model",
+        "category": "pattern_deviation:days_invoice_to_due",
+        "severity": "medium",
+        "message": "The gap between invoice date and due date is unusual. (observed value: 60.00, contribution to anomaly score: 0.05)"
+      }
+    ]
+  },
+  {
+    "doc_id": "doc_16_original_for_duplicate.txt",
+    "risk_level": "Medium",
+    "ml_anomaly_score": 0.6048,
+    "ml_anomaly_percentile": 99.6,
+    "extracted_fields": {
+      "vendor_name": "Harbor Freight Partners",
+      "invoice_date": "2026-07-03",
+      "due_date": "2026-09-01",
+      "subtotal": 10567.01,
+      "tax": 845.36,
+      "total_amount": 11412.37,
+      "invoice_number": "INV-20109",
+      "po_number": "PO-30153",
+      "payment_terms": "NET60"
+    },
+    "reasons": [
+      {
+        "source": "ml_model",
+        "category": "pattern_deviation:digit_density",
+        "severity": "medium",
+        "message": "The proportion of numeric content in the document is atypical. (observed value: 0.13, contribution to anomaly score: 0.05)"
+      },
+      {
+        "source": "similarity",
+        "category": "near_duplicate",
+        "severity": "high",
+        "message": "Content is 100% similar to another document in this batch ('doc_17_near_duplicate.txt') \u2014 possible duplicate submission."
+      }
+    ]
+  },
+  {
+    "doc_id": "doc_17_near_duplicate.txt",
+    "risk_level": "Medium",
+    "ml_anomaly_score": 0.6048,
+    "ml_anomaly_percentile": 99.6,
+    "extracted_fields": {
+      "vendor_name": "Harbor Freight Partners",
+      "invoice_date": "2026-07-03",
+      "due_date": "2026-09-01",
+      "subtotal": 10567.01,
+      "tax": 845.36,
+      "total_amount": 11412.37,
+      "invoice_number": "INV-20109-A",
+      "po_number": "PO-30153",
+      "payment_terms": "NET60"
+    },
+    "reasons": [
+      {
+        "source": "ml_model",
+        "category": "pattern_deviation:digit_density",
+        "severity": "medium",
+        "message": "The proportion of numeric content in the document is atypical. (observed value: 0.13, contribution to anomaly score: 0.05)"
+      },
+      {
+        "source": "similarity",
+        "category": "near_duplicate",
+        "severity": "high",
+        "message": "Content is 100% similar to another document in this batch ('doc_16_original_for_duplicate.txt') \u2014 possible duplicate submission."
+      }
+    ]
+  },
+  {
+    "doc_id": "doc_18_unparsable_date.txt",
+    "risk_level": "Medium",
+    "ml_anomaly_score": 0.572,
+    "ml_anomaly_percentile": 95.6,
+    "extracted_fields": {
+      "vendor_name": "Harbor Freight Partners",
+      "invoice_date": "3O/13/2O26",
+      "due_date": "2026-09-05",
+      "subtotal": 8536.28,
+      "tax": 682.9,
+      "total_amount": 9219.18,
+      "invoice_number": "INV-20110",
+      "po_number": "PO-37237",
+      "payment_terms": "NET60"
+    },
+    "reasons": [
+      {
+        "source": "rule",
+        "category": "date_format",
+        "severity": "medium",
+        "message": "Invoice date field ('3O/13/2O26') could not be parsed as a valid date \u2014 likely an OCR error or malformed input."
+      },
+      {
+        "source": "ml_model",
+        "category": "pattern_deviation:digit_density",
+        "severity": "medium",
+        "message": "The proportion of numeric content in the document is atypical. (observed value: 0.12, contribution to anomaly score: 0.05)"
+      }
+    ]
+  },
+  {
+    "doc_id": "doc_01_normal.txt",
+    "risk_level": "Low",
+    "ml_anomaly_score": 0.6003,
+    "ml_anomaly_percentile": 99.2,
+    "extracted_fields": {
+      "vendor_name": "Crestline Manufacturing",
+      "invoice_date": "2026-08-04",
+      "due_date": "2026-09-18",
+      "subtotal": 14692.71,
+      "tax": 1175.42,
+      "total_amount": 15868.13,
+      "invoice_number": "INV-20000",
+      "po_number": "PO-31644",
+      "payment_terms": "NET45"
+    },
+    "reasons": [
+      {
+        "source": "ml_model",
+        "category": "pattern_deviation:digit_density",
+        "severity": "medium",
+        "message": "The proportion of numeric content in the document is atypical. (observed value: 0.13, contribution to anomaly score: 0.05)"
+      }
+    ]
+  },
+  {
+    "doc_id": "doc_02_normal.txt",
+    "risk_level": "Low",
+    "ml_anomaly_score": 0.6295,
+    "ml_anomaly_percentile": 99.6,
+    "extracted_fields": {
+      "vendor_name": "Harbor Freight Partners",
+      "invoice_date": "2026-06-13",
+      "due_date": "2026-08-12",
+      "subtotal": 8650.79,
+      "tax": 692.06,
+      "total_amount": 9342.85,
+      "invoice_number": "INV-20001",
+      "po_number": "PO-38617",
+      "payment_terms": "NET60"
+    },
+    "reasons": [
+      {
+        "source": "summary",
+        "category": "clean",
+        "severity": "low",
+        "message": "No inconsistencies detected; document is consistent with historical patterns."
+      }
+    ]
+  },
+  {
+    "doc_id": "doc_03_normal.txt",
+    "risk_level": "Low",
+    "ml_anomaly_score": 0.5964,
+    "ml_anomaly_percentile": 99.2,
+    "extracted_fields": {
+      "vendor_name": "Harbor Freight Partners",
+      "invoice_date": "2026-06-02",
+      "due_date": "2026-08-01",
+      "subtotal": 8681.46,
+      "tax": 694.52,
+      "total_amount": 9375.98,
+      "invoice_number": "INV-20002",
+      "po_number": "PO-32529",
+      "payment_terms": "NET60"
+    },
+    "reasons": [
+      {
+        "source": "summary",
+        "category": "clean",
+        "severity": "low",
+        "message": "No inconsistencies detected; document is consistent with historical patterns."
+      }
+    ]
+  },
+  {
+    "doc_id": "doc_04_normal.txt",
+    "risk_level": "Low",
+    "ml_anomaly_score": 0.5741,
+    "ml_anomaly_percentile": 96.4,
+    "extracted_fields": {
+      "vendor_name": "Bluepeak Logistics",
+      "invoice_date": "2026-07-31",
+      "due_date": "2026-08-15",
+      "subtotal": 3289.32,
+      "tax": 263.15,
+      "total_amount": 3552.47,
+      "invoice_number": "INV-20003",
+      "po_number": "PO-34342",
+      "payment_terms": "NET15"
+    },
+    "reasons": [
+      {
+        "source": "summary",
+        "category": "clean",
+        "severity": "low",
+        "message": "No inconsistencies detected; document is consistent with historical patterns."
+      }
+    ]
+  },
+  {
+    "doc_id": "doc_05_normal.txt",
+    "risk_level": "Low",
+    "ml_anomaly_score": 0.5403,
+    "ml_anomaly_percentile": 90.0,
+    "extracted_fields": {
+      "vendor_name": "Falcon IT Services",
+      "invoice_date": "2026-08-19",
+      "due_date": "2026-09-18",
+      "subtotal": 2693.8,
+      "tax": 215.5,
+      "total_amount": 2909.3,
+      "invoice_number": "INV-20004",
+      "po_number": "PO-35383",
+      "payment_terms": "NET30"
+    },
+    "reasons": [
+      {
+        "source": "summary",
+        "category": "clean",
+        "severity": "low",
+        "message": "No inconsistencies detected; document is consistent with historical patterns."
+      }
+    ]
+  },
+  {
+    "doc_id": "doc_06_normal.txt",
+    "risk_level": "Low",
+    "ml_anomaly_score": 0.5766,
+    "ml_anomaly_percentile": 96.8,
+    "extracted_fields": {
+      "vendor_name": "Ironclad Security Inc.",
+      "invoice_date": "2026-07-19",
+      "due_date": "2026-08-18",
+      "subtotal": 1922.09,
+      "tax": 153.77,
+      "total_amount": 2075.86,
+      "invoice_number": "INV-20005",
+      "po_number": "PO-35188",
+      "payment_terms": "NET30"
+    },
+    "reasons": [
+      {
+        "source": "summary",
+        "category": "clean",
+        "severity": "low",
+        "message": "No inconsistencies detected; document is consistent with historical patterns."
+      }
+    ]
+  },
+  {
+    "doc_id": "doc_10_duplicate_invoice_number.txt",
+    "risk_level": "High",
+    "ml_anomaly_score": 0.6101,
+    "ml_anomaly_percentile": 99.6,
+    "extracted_fields": {
+      "vendor_name": "Juniper Marketing Group",
+      "invoice_date": "2026-06-04",
+      "due_date": "2026-06-19",
+      "subtotal": 5470.69,
+      "tax": 437.66,
+      "total_amount": 5908.35,
+      "invoice_number": "INV-10149",
+      "po_number": "PO-30753",
+      "payment_terms": "NET15"
+    },
+    "reasons": [
+      {
+        "source": "rule",
+        "category": "amount_outlier",
+        "severity": "high",
+        "message": "Total amount is 11.2 standard deviations higher than this vendor's historical average \u2014 a significant deviation from past invoices."
+      },
+      {
+        "source": "rule",
+        "category": "duplicate",
+        "severity": "high",
+        "message": "Invoice number 'INV-10149' already exists in historical records \u2014 possible duplicate submission or resubmitted invoice."
+      }
+    ]
+  },
+  {
+    "doc_id": "doc_12_amount_outlier.txt",
+    "risk_level": "High",
+    "ml_anomaly_score": 0.5754,
+    "ml_anomaly_percentile": 96.4,
+    "extracted_fields": {
+      "vendor_name": "Delta Office Solutions",
+      "invoice_date": "2026-08-07",
+      "due_date": "2026-09-06",
+      "subtotal": 2600.0,
+      "tax": 208.0,
+      "total_amount": 2808.0,
+      "invoice_number": "INV-20105",
+      "po_number": "PO-36751",
+      "payment_terms": "NET30"
+    },
+    "reasons": [
+      {
+        "source": "rule",
+        "category": "amount_outlier",
+        "severity": "high",
+        "message": "Total amount is 12.5 standard deviations higher than this vendor's historical average \u2014 a significant deviation from past invoices."
+      },
+      {
+        "source": "rule",
+        "category": "round_numbers",
+        "severity": "low",
+        "message": "Subtotal ($2,600.00) and total are suspiciously round numbers; genuine itemized invoices rarely land on exact round figures."
+      }
+    ]
+  }
+]

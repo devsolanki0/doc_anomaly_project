@@ -1,0 +1,16 @@
+Bluepeak Logistics
+123 Commerce Way, Springfield
+-----------------------------------------
+INVOICE
+Invoice Number: INV-20102
+Invoice Date: 2026-10-27
+Due Date: 2026-11-26
+PO Number: PO-32725
+Payment Terms: NET15
+-----------------------------------------
+Description                Qty     Amount
+Professional Services        1     4,081.66
+-----------------------------------------
+Subtotal: $4,081.66
+Tax (8%): $326.53
+Total Amount Due: $4,408.19
